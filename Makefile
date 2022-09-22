@@ -65,6 +65,10 @@ apply-conf: ## Aplly config
 	asterisk -rx "sip reload"
 	asterisk -rx "pjsip reload"
 	#asterisk -rx "unistim reload"
+init: ## Init 
+	mkdir -p ./cfg/asterisk
+	mkdir -p ./cfg/prov
+	mkdir -p ./cfg/scripts
 
 update:  clean conf prov copy-all apply-conf ## Make conf, copy, apply-conf
 
